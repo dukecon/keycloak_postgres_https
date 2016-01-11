@@ -395,7 +395,7 @@
         <subsystem xmlns="urn:jboss:domain:undertow:2.0">
             <buffer-cache name="default"/>
             <server name="default-server">
-                <http-listener name="default" socket-binding="http" redirect-socket="https"/>
+                <http-listener name="default" socket-binding="http" proxy-address-forwarding="true" redirect-socket="https"/>
                 <host name="default-host" alias="localhost">
                     <location name="/" handler="welcome-content"/>
                     <filter-ref name="server-header"/>
@@ -449,6 +449,7 @@
     </interfaces>
     <socket-binding-group name="standard-sockets" default-interface="public"
                          port-offset="${jboss.socket.binding.port-offset:0}">
+        <socket-binding name="proxy-https" port="443"/>
         <socket-binding name="management-http" interface="management"
                       port="${jboss.management.http.port:9990}"/>
         <socket-binding name="management-https" interface="management"
