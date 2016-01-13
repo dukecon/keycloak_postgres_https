@@ -1,0 +1,18 @@
+embed-server --std-out=echo
+
+# http://keycloak.github.io/docs/userguide/keycloak-server/html/server-installation.html
+# 3.2.7.2. Enable SSL on a Reverse Proxy
+# First add proxy-address-forwarding and redirect-socket to the http-listener element.
+# Then add a new socket-binding element to the socket-binding-group element.
+
+batch
+
+/subsystem=undertow/server=default-server/http-listener=default:write-attribute(name=proxy-address-forwarding,value=true)
+
+/subsystem=undertow/server=default-server/http-listener=default:write-attribute(name=redirect-socket,value=proxy-https)
+
+/socket-binding-group=standard-sockets/socket-binding=proxy-https:add(port=443)
+
+run-batch
+
+stop-embedded-server
