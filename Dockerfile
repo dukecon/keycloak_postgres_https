@@ -5,4 +5,6 @@ MAINTAINER Gerd Aschemann <gerd@aschemann.net>
 ADD config.sh /tmp/
 ADD batch.cli /tmp/
 
+# ADD themes/javaland ???/standalone/configuration/themes/javaland
+
 RUN /tmp/config.sh
