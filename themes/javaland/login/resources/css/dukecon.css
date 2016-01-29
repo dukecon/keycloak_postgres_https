@@ -77,7 +77,7 @@ h2 {
 }
 
 .feedback-error {
-    color: #bf5a00
+    color: #bf5a00;
 }
 
 ul.social {
@@ -137,4 +137,12 @@ ul.social {
     h1 #pagetitle {
         display: inline-block;
     }
+}
+
+/* PURE CSS overrides */
+.pure-button-primary,
+.pure-button-selected,
+a.pure-button-primary,
+a.pure-button-selected {
+    background-color: #1aa3b1;
 }

@@ -7,7 +7,7 @@
         <#list federatedIdentity.identities as identity>
             <div class="pure-control-group">
                 <label for="${identity.providerId!}">${identity.providerName!}</label>
-                <input disabled="true" value="${identity.userName!}">
+                <input class="pure-input-2-3" disabled="true" value="${identity.userName!}">
                 <span>
                     <#if identity.connected>
                         <#if federatedIdentity.removeLinkPossible>

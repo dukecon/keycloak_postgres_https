@@ -11,14 +11,14 @@
                 <div class="pure-control-group">
                     <label for="username"><#if !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
                     <#if usernameEditDisabled??>
-                        <input id="username" name="username" value="${(login.username!'')?html}" type="text" disabled />
+                        <input id="username" name="username" class="pure-input-2-3" value="${(login.username!'')?html}" type="text" disabled />
                     <#else>
-                        <input id="username" name="username" value="${(login.username!'')?html}" type="text" autofocus />
+                        <input id="username" name="username" class="pure-input-2-3" value="${(login.username!'')?html}" type="text" autofocus />
                     </#if>
                 </div>
                 <div class="pure-control-group">
                     <label for="password">${msg("password")}</label>
-                    <input id="password" name="password" type="password" />
+                    <input id="password" name="password" class="pure-input-2-3" type="password" />
                 </div>
 
                 <div class="pure-control-group">
@@ -34,7 +34,7 @@
 
                 <div class="pure-control-group">
                     <label></label>
-                    <input class="pure-button" name="login" type="submit" value="${msg("doLogIn")}"/>
+                    <input class="pure-button pure-button-primary" name="login" type="submit" value="${msg("doLogIn")}"/>
                     <#if realm.resetPasswordAllowed>
                         <span><a href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a></span>
                     </#if>

@@ -7,7 +7,7 @@
         <#if password.passwordSet>
             <div class="pure-control-group">
                 <label for="password">${msg("password")}</label>
-                <input type="password" id="password" name="password" autofocus>
+                <input type="password" id="password" name="password" class="pure-input-2-3" autofocus>
             </div>
         </#if>
 
@@ -15,12 +15,12 @@
 
         <div class="pure-control-group">
             <label for="password-new">${msg("passwordNew")}</label>
-            <input type="password" id="password-new" name="password-new">
+            <input type="password" id="password-new" name="password-new" class="pure-input-2-3">
         </div>
 
         <div class="pure-control-group">
             <label for="password-confirm">${msg("passwordConfirm")}</label>
-            <input type="password" id="password-confirm" name="password-confirm">
+            <input type="password" id="password-confirm" name="password-confirm" class="pure-input-2-3">
         </div>
 
         <div class="pure-control-group">

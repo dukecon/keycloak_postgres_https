@@ -10,34 +10,34 @@
             <#if !realm.registrationEmailAsUsername>
             <div class="pure-control-group">
                 <label for="username">${msg("username")}</label>
-                <input type="text" id="username" name="username" value="${(register.formData.username!'')?html}" />
+                <input type="text" id="username" name="username" class="pure-input-2-3" value="${(register.formData.username!'')?html}" />
             </div>
             </#if>
             
             <div class="pure-control-group">
                 <label for="firstName">${msg("firstName")}</label>
-                <input type="text" id="firstName" name="firstName" value="${(register.formData.firstName!'')?html}" />
+                <input type="text" id="firstName" name="firstName" class="pure-input-2-3" value="${(register.formData.firstName!'')?html}" />
             </div>
 
             <div class="pure-control-group">
                 <label for="lastName">${msg("lastName")}</label>
-                <input type="text" id="lastName" name="lastName" value="${(register.formData.lastName!'')?html}" />
+                <input type="text" id="lastName" name="lastName" class="pure-input-2-3" value="${(register.formData.lastName!'')?html}" />
             </div>
 
             <div class="pure-control-group">
                 <label for="email">${msg("email")}</label>
-                <input type="text" id="email" name="email" value="${(register.formData.email!'')?html}" />
+                <input type="text" id="email" name="email" class="pure-input-2-3" value="${(register.formData.email!'')?html}" />
             </div>
 
             <#if passwordRequired>
             <div class="pure-control-group">
                 <label for="password">${msg("password")}</label>
-                <input type="password" id="password" name="password" />
+                <input type="password" id="password" name="password" class="pure-input-2-3" />
             </div>
 
             <div class="pure-control-group">
                 <label for="password-confirm">${msg("passwordConfirm")}</label>
-                <input type="password" id="password-confirm" name="password-confirm" />
+                <input type="password" id="password-confirm" name="password-confirm" class="pure-input-2-3" />
             </div>
             </#if>
 
@@ -50,7 +50,7 @@
 
             <div class="pure-control-group">
                 <label></label>
-                <input class="pure-button" type="submit" value="${msg("doRegister")}"/>
+                <input class="pure-button pure-button-primary" type="submit" value="${msg("doRegister")}"/>
                 <span><a href="${url.loginUrl}">${msg("backToLogin")}</a></span>
             </div>
         </form>

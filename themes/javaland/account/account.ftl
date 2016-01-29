@@ -9,22 +9,22 @@
 
         <div class="pure-control-group">
             <label for="username">${msg("username")}<#if realm.editUsernameAllowed><span class="required">*</span></#if></label>
-            <input type="text" id="username" name="username" <#if !realm.editUsernameAllowed>disabled="disabled"</#if> value="${(account.username!'')?html}"/>
+            <input type="text" id="username" name="username" class="pure-input-2-3" <#if !realm.editUsernameAllowed>disabled="disabled"</#if> value="${(account.username!'')?html}"/>
         </div>
 
         <div class="pure-control-group">
             <label for="email">${msg("email")}<span class="required">*</span></label>
-            <input type="text" id="email" name="email" autofocus value="${(account.email!'')?html}"/>
+            <input type="text" id="email" name="email" class="pure-input-2-3" autofocus value="${(account.email!'')?html}"/>
         </div>
 
         <div class="pure-control-group">
             <label for="firstName">${msg("firstName")}<span class="required">*</span></label>
-            <input type="text" id="firstName" name="firstName" value="${(account.firstName!'')?html}"/>
+            <input type="text" id="firstName" name="firstName" class="pure-input-2-3" value="${(account.firstName!'')?html}"/>
         </div>
 
         <div class="pure-control-group">
             <label for="lastName">${msg("lastName")}<span class="required">*</span></label>
-            <input type="text" id="lastName" name="lastName" value="${(account.lastName!'')?html}"/>
+            <input type="text" id="lastName" name="lastName" class="pure-input-2-3" value="${(account.lastName!'')?html}"/>
         </div>
 
         <div class="pure-control-group">
