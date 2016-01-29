@@ -3,6 +3,7 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
     <title>${msg("accountManagementTitle")}</title>
     <link rel="icon" href="${url.resourcesPath}/img/favicon.ico">
     <#if properties.styles?has_content>
@@ -26,8 +27,14 @@
         <div>Keycloak&nbsp;</div>
     </h1>
 </div>
-<div class="content pure-g">
-    <div class="pure-u-1-5">
+<div id="layout" class="content">
+    <!-- Menu toggle -->
+    <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+    </a>
+
+    <div id="menu">
         <div class="pure-menu">
             <span class="pure-menu-heading">Menu</span>
             <ul class="pure-menu-list">
@@ -42,16 +49,18 @@
             </ul>
         </div>
     </div>
-    <div class="pure-u-4-5">
+
+    <div id="main">
         <#if message?has_content>
             <div class="feedback-${message.type}">
-                ${message.summary}
+            ${message.summary}
             </div>
         </#if>
 
         <#nested "content">
     </div>
 </div>
+<script type="text/javascript" src="${url.resourcesPath}/js/ui.js"></script>
 </body>
 </html>
 </#macro>

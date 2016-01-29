@@ -10,58 +10,9 @@ body {
     text-align: left;
 }
 
-table, th, td {
-    border: 1px solid #ddd;
-    vertical-align: top;
-    padding: 5px;
-}
-
-th {
-    color: #1AA3B1;
-    background-color: #fff;
-}
-
-td {
-    background-color: #ffffff;
-}
-
-button, .button {
-    background-color: #eee;
-    border: 0 none rgba(0, 0, 0, 0);
-    color: rgba(0, 0, 0, 0.8);
-    font-weight: bold;
-    font-size: smaller;
-    line-height: normal;
-    text-align: center;
-    padding: 0.7em;
-    box-sizing: border-box;
-    cursor: pointer;
-    display: inline-block;
-    vertical-align: middle;
-    white-space: nowrap;
-}
-
-button:active, .button:active {
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) inset, 0 0 6px rgba(0, 0, 0, 0.2) inset;
-}
-
-button:hover, button:focus, .button:hover, .button:focus {
-    background-color: #eee;
-}
-
-button.selected {
-    background-color: #ddee55;
-}
-
 .header img {
     height: 1.8em;
     margin: 0;
-}
-
-.main-menu {
-    margin-top: 0.5em;
-    display: inline-block;
-    float: left;
 }
 
 a {
@@ -75,15 +26,6 @@ a {
 
 a:hover {
     color: #00c3d7;
-}
-
-.mainmenu {
-}
-
-.mainmenu.active {
-    background: #FFFFFF;
-    color: #1AA3B1;
-    cursor: default;
 }
 
 h1 {
@@ -128,10 +70,6 @@ h2 {
     width: 100%;
     z-index: 1005; /* side-menu has 1000 */
     box-shadow: 0 0 4px 2px #666666;
-}
-
-.hidden {
-    display: none;
 }
 
 .feedback-success {
@@ -199,56 +137,4 @@ ul.social {
     h1 #pagetitle {
         display: inline-block;
     }
-
-    #talkpage h1 #pagetitle {
-        display: none;
-    }
-
-    h1 #mainmenu-button {
-        display: inline-block;
-        float: right;
-        padding-right: 5px;
-        font-size: smaller;
-        cursor: pointer;
-    }
-
-    h1 #mainmenu-button img {
-        vertical-align: middle;
-    }
-
-    h1 #mainmenu-items {
-        height: auto;
-        font-size: smaller;
-        background: #1aa3b1;
-        width: 200px;
-        position: fixed;
-        display: none;
-        top: 40px;
-        right: 0;
-    }
-
-    h1 #mainmenu-items.shown {
-        display: block;
-        box-shadow: 0 2px 3px 0 #666666;
-    }
-
-    h2 {
-        margin-left: 5px;
-    }
-
-    .mainmenu {
-        display: block;
-        border-bottom: 1px solid #FFFFFF;
-    }
-
-    .mainmenu:last-child {
-        display: block;
-        border-bottom: none;
-        padding-bottom: 5px;
-    }
-}
-
-/* PURE CSS overrides */
-.pure-g {
-    letter-spacing: 0;
 }
