@@ -2,7 +2,7 @@
 
 set -e
 
-image=keycloak-postgres-https:1.7.0.Final
+image=keycloak-postgres-https:1.7.0.Javaland
 
 docker build \
     -t $image \
