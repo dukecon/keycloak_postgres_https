@@ -1,4 +1,4 @@
-FROM jboss/keycloak-postgres:1.7.0.Final
+FROM jboss/keycloak-postgres:1.8.0.Final
 
 MAINTAINER Gerd Aschemann <gerd@aschemann.net>
 
