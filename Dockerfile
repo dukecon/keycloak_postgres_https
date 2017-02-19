@@ -5,6 +5,7 @@ MAINTAINER Gerd Aschemann <gerd@aschemann.net>
 ADD config.sh /tmp/
 ADD batch.cli /tmp/
 
-ADD themes/javaland /opt/jboss/keycloak/standalone/configuration/themes/javaland
+ADD themes/javaland /opt/jboss/keycloak/themes/javaland
+ADD providers /opt/jboss/keycloak/providers
 
 RUN /tmp/config.sh
