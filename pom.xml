@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.dukecon</groupId>
+    <artifactId>dukecon-keycloak-postgres</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>DukeCon KeyCloak Postgres Docker</name>
+    <packaging>pom</packaging>
+
+    <properties>
+        <base.folder>${project.basedir}</base.folder>
+
+        <http_proxy></http_proxy>
+        <docker.registry.host></docker.registry.host>
+        <docker.registry.port></docker.registry.port>
+        <!-- IMPORTANT: make the trailing slash part of the property to allow for easy replacement with an empty
+          registry url in the <name> parameters of the docker plugin configurations! -->
+        <docker.registry.url>${docker.registry.host}${docker.registry.port}</docker.registry.url>
+
+        <docker.generated.targetPath>${project.build.directory}/docker-generated</docker.generated.targetPath>
+
+        <docker.image.src.owner>jboss</docker.image.src.owner>
+        <docker.image.src.name>keycloak-postgres</docker.image.src.name>
+        <docker.image.src.version>2.5.1.Final</docker.image.src.version>
+        <docker.image.tgt.owner>ascheman</docker.image.tgt.owner>
+        <docker.image.tgt.name>dukecon-keycloak-postgres</docker.image.tgt.name>
+        <docker.image.tgt.version>${project.version}</docker.image.tgt.version>
+
+        <!-- Keep version properties in alphabetical order -->
+        <docker-maven-plugin.version>0.15.3</docker-maven-plugin.version>
+        <maven-resources-plugin.version>3.0.1</maven-resources-plugin.version>
+        <versions-maven-plugin.version>2.3</versions-maven-plugin.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.dukecon</groupId>
+            <artifactId>keycloak-doag-user-spi</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <defaultGoal>package</defaultGoal>
+
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/docker</directory>
+                <targetPath>${docker.generated.targetPath}</targetPath>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/docker-resources</directory>
+                <targetPath>${docker.generated.targetPath}</targetPath>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+
+        <plugins>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>${maven-resources-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>resources</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>${docker-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>create-image</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <verbose>true</verbose>
+                    <logStdout>true</logStdout>
+                    <logAll>true</logAll>
+                    <images>
+                        <image>
+                            <name>${docker.registry.url}${docker.image.tgt.name}:${docker.image.tgt.version}</name>
+                            <build>
+                                <dockerFile>${docker.generated.targetPath}/Dockerfile</dockerFile>
+                                <assembly>
+                                    <inline xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2"
+                                            xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+                                        <id>mprm</id>
+                                        <dependencySets>
+                                            <dependencySet>
+                                                <includes>
+                                                    <include>org.dukecon</include>
+                                                </includes>
+                                                <outputDirectory>providers</outputDirectory>
+                                            </dependencySet>
+                                        </dependencySets>
+                                    </inline>
+                                </assembly>
+                            </build>
+                        </image>
+                    </images>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>${versions-maven-plugin.version}</version>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>localregistry</id>
+            <properties>
+                <docker.registry.host>localhost</docker.registry.host>
+                <docker.registry.port>:5000/</docker.registry.port>
+            </properties>
+        </profile>
+    </profiles>
+</project>
