@@ -132,5 +132,12 @@
                 <docker.registry.port>:5000/</docker.registry.port>
             </properties>
         </profile>
+        <profile>
+            <id>localtest</id>
+            <properties>
+                <docker.image.src.name>keycloak</docker.image.src.name>
+                <docker.image.tgt.name>dukecon-keycloak</docker.image.tgt.name>
+            </properties>
+        </profile>
     </profiles>
 </project>
