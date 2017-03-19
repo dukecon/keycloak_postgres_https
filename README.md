@@ -43,3 +43,53 @@ TBD: Screen shot
 
 * Log out
 * You should see your new Login page
+
+## KeyCloak Admin Cheat Sheet
+
+### Docker Exec
+
+If you want to perform some operations with the `kcadm.sh` script, e.g., bulk deletes of users,
+you could connect to the running docker container and start a shell. 
+
+```bash
+docker exec -ti keycloak /bin/bash
+```
+
+In the shell session you may switch to the JBoss `bin` directory (all subsequent commands are
+executed from there).
+
+```bash
+cd /opt/jboss/keycloak/bin
+```
+
+### Login to KC
+
+```bash
+```
+
+### Delete all users
+
+I recommend to set an environment variable to refer to the realm you are working on
+
+```bash
+export REALM="javaland"
+```
+
+First you have to list all users
+
+```bash
+./kcadm.sh get users --format csv --noquotes -l 10000 -r ${REALM} > /tmp/${REALM}-users
+```
+
+Then I would recommend to create a batch file with all user endpoints
+
+```bash
+awk -F, '{print "users/"$1}' /tmp/${REALM}-users > /tmp/${REALM}-users-ids 
+```
+
+Finally you could delete all of them in a loop
+
+```bash
+for i in `cat /tmp/${REALM}-users-ids`; do ./kcadm.sh delete $i -r ${REALM}; echo $i; done
+```
+
