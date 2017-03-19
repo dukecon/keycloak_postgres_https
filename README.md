@@ -10,13 +10,13 @@ If you want to test the provided DukeCon/Javaland themes perform the following s
 
 ### Build Docker test image
 
-```
+```bash
 mvn clean package -Plocaltest
 ```
 
 ### Run Docker test image
 
-```
+```bash
 docker run -ti --rm \ 
   -e KEYCLOAK_USER=admin \
   -e KEYCLOAK_PASSWORD=admin123 \
