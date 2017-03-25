@@ -185,6 +185,7 @@ a.pure-button-selected {
 @media (max-height: 360px) {
     .content {
         font-size: 95%;
+        margin: 3.5em 1em;
     }
     .content h2 {
         margin: 2em 0.8em 0;
