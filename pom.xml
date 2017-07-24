@@ -24,8 +24,9 @@
 
         <docker.image.src.owner>jboss</docker.image.src.owner>
         <docker.image.src.name>keycloak-postgres</docker.image.src.name>
-        <docker.image.tgt.owner>ascheman</docker.image.tgt.owner>
         <docker.image.src.version>3.2.1.Final</docker.image.src.version>
+        <!-- For the owner either leave it empty or add the trailing slash! -->
+        <docker.image.tgt.owner>dukecon/</docker.image.tgt.owner>
         <docker.image.tgt.name>dukecon-keycloak-postgres</docker.image.tgt.name>
         <docker.image.tgt.version>${project.version}</docker.image.tgt.version>
 
@@ -95,7 +96,7 @@
                     <logAll>true</logAll>
                     <images>
                         <image>
-                            <name>${docker.registry.url}${docker.image.tgt.name}:${docker.image.tgt.version}</name>
+                            <name>${docker.registry.url}${docker.image.tgt.owner}${docker.image.tgt.name}:${docker.image.tgt.version}</name>
                             <build>
                                 <dockerFile>${docker.generated.targetPath}/Dockerfile</dockerFile>
                                 <assembly>
