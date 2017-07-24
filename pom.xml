@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <base.folder>${project.basedir}</base.folder>
 
         <http_proxy></http_proxy>
