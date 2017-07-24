@@ -32,6 +32,10 @@ docker run -ti --rm \
 
 Wait a second for the Docker container to come up!
 
+*Attention:* This runs the image in a temporary container (`--rm` flag). As soon as you 
+press `ctrl-c` the container (and your changes) are gone. Drop the rm flag if you want to
+keep it for other tests. Then you need to perform a manual clean up (eg., `docker rm keycloak-test`).
+
 ### Connect to Admin interface
 
 * Login to KeyCloak Admin Console on http://localhost:18080/auth/admin
