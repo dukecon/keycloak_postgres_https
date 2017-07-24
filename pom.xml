@@ -24,8 +24,8 @@
 
         <docker.image.src.owner>jboss</docker.image.src.owner>
         <docker.image.src.name>keycloak-postgres</docker.image.src.name>
-        <docker.image.src.version>2.5.1.Final</docker.image.src.version>
         <docker.image.tgt.owner>ascheman</docker.image.tgt.owner>
+        <docker.image.src.version>3.2.1.Final</docker.image.src.version>
         <docker.image.tgt.name>dukecon-keycloak-postgres</docker.image.tgt.name>
         <docker.image.tgt.version>${project.version}</docker.image.tgt.version>
 
