@@ -1,0 +1,111 @@
+html, body {
+    width: 100%;
+    height: 99%;
+    margin: 0;
+    color: #777777;
+}
+
+body {
+    font-family: Arial, Ubuntu, Helvetica, Nimbus Sans L, Droid Sans, sans-serif;
+    text-align: left;
+}
+
+.header img {
+    height: 1.8em;
+    margin: 0;
+}
+
+a {
+    color: #1AA3B1;
+    font-weight: normal;
+    padding: 0.2em 0.5em;
+    text-decoration: none;
+    display: inline;
+    transition: background 0.7s
+}
+
+a:hover {
+    color: #00c3d7;
+}
+
+h1 {
+    height: 2em;
+    overflow: hidden;
+    margin-bottom: 0;
+    margin-top: 0;
+    clear: both;
+    font-size: 120%;
+    line-height: 1.9em;
+    text-align: right;
+    color: #FFFFFF;
+    background: #1AA3B1;
+    font-weight: 300;
+}
+
+h1 #pagetitle {
+    display: none;
+}
+
+h1 a#logo {
+    float: left;
+    height: 2em;
+    overflow: hidden;
+    padding: 0 10px 0 5px;
+}
+
+h2 {
+    font-size: 110%;
+    text-align: left;
+}
+
+.content {
+    margin: 3em;
+}
+
+.header {
+    background: white;
+    top: 0;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    z-index: 1005; /* side-menu has 1000 */
+    box-shadow: 0 0 4px 2px #666666;
+}
+
+.feedback-success {
+    color: #1aa3b1;
+}
+
+.feedback-error {
+    color: #bf5a00;
+}
+
+/* RESPONSIVE TWEAKS for small screens */
+@media (max-width: 47.9em) {
+    .content {
+        font-size: 95%;
+        padding: 0;
+        margin: 3em 0;
+        width: 98%
+    }
+
+    h1 {
+        text-align: left;
+    }
+
+    h1 #pagetitle {
+        display: inline-block;
+    }
+
+    h2 {
+        margin-left: 3em;
+    }
+}
+
+/* PURE CSS overrides */
+.pure-button-primary,
+.pure-button-selected,
+a.pure-button-primary,
+a.pure-button-selected {
+    background-color: #1aa3b1;
+}
