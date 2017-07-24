@@ -4,9 +4,15 @@
 
 TBD
 
+## Add Theme(s)
+
+If you would like to see a new theme, e.g., for a new conference, just go to the 
+`src/main/docker/themes` folder and follow the appropriate instructions from the
+[KeyCloak documentation](https://keycloak.gitbooks.io/documentation/server_development/topics/themes.html).
+
 ## Testing
 
-If you want to test the provided DukeCon/Javaland themes perform the following steps:
+If you want to test the provided DukeCon/Javaland (or you new) themes, perform the following steps:
 
 ### Build Docker test image
 
@@ -17,32 +23,39 @@ mvn clean package -Plocaltest
 ### Run Docker test image
 
 ```bash
-docker run -ti --rm \ 
+docker run -ti --rm \
   -e KEYCLOAK_USER=admin \
   -e KEYCLOAK_PASSWORD=admin123 \
-  -p 18080:8080 dukecon-keycloak:1.0-SNAPSHOT
+  -p 18080:8080 dukecon/dukecon-keycloak:1.1-SNAPSHOT
 ```
 
 Wait a second for the Docker container to come up!
 
 ### Connect to Admin interface
 
-TBD: Screen shot
-
 * Login to KeyCloak Admin Console on http://localhost:18080/auth/admin
 * Use the credentials set as Environment variables from the run step
-* Select the _master_ realm
+![KeyCloak Login Std Theme](images/keycloak-login-stdtheme.png)
+
+### Configure KeyCloak
+
+* Select the _master_ realm (this is by default the only realm)
 * Switch to _Login_ tab 
 ** Set all options to _off_
 ** Save the settings!
+![Configure Login](images/keycloak-admin-configure-login.png)
 * Switch to _Themes_ tab
-** Select _javaland_ as _Login Theme_
+** Select _javaland_ (or any other theme) as _Login Theme_
+![Configure Themes](images/keycloak-admin-configure-themes.png)
+![Select Theme](images/keycloak-admin-choose-theme.png)
 ** Save the settings!
 
-### Test
+### Test new settings
 
-* Log out
+* Sign out
+![Logout](images/keycloak-signout.png)
 * You should see your new Login page
+![KeyCloak Login JavaLand Theme](images/keycloak-login-javaland.png)
 
 ## KeyCloak Admin Cheat Sheet
 
@@ -60,11 +73,6 @@ executed from there).
 
 ```bash
 cd /opt/jboss/keycloak/bin
-```
-
-### Login to KC
-
-```bash
 ```
 
 ### Delete all users
