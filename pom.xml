@@ -5,7 +5,7 @@
 
     <groupId>org.dukecon</groupId>
     <artifactId>dukecon-keycloak-postgres</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.1-SNAPSHOT</version>
     <name>DukeCon KeyCloak Postgres Docker</name>
     <packaging>pom</packaging>
 
