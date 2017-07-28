@@ -10,7 +10,7 @@
 
                 <!-- TODO: Clean this up! -->
                 <div class="pure-control-group"><em>Please use your Javaland user account. If you have not yet registered, please visit<br>
-                    <a href="https://www.javaland.eu/de/login/registrierung/">the Javaland registration page</a>.<br>
+                    <a href="https://www.doag.org/de/login/registrierung/">the DOAG registration page</a>.<br>
                     Come back here after successful registration.</em></div>
                 <div class="pure-control-group">
                     <label for="username">${msg("username")}</label>

@@ -16,7 +16,7 @@ body {
 }
 
 a {
-    color: #1AA3B1;
+    color: #e30613;
     font-weight: normal;
     padding: 0.2em 0.5em;
     text-decoration: none;
@@ -38,7 +38,7 @@ h1 {
     line-height: 1.9em;
     text-align: right;
     color: #FFFFFF;
-    background: #1AA3B1;
+    background: #fff;
     font-weight: 300;
 }
 
@@ -107,5 +107,5 @@ h2 {
 .pure-button-selected,
 a.pure-button-primary,
 a.pure-button-selected {
-    background-color: #1aa3b1;
+    background-color: #e30613;
 }

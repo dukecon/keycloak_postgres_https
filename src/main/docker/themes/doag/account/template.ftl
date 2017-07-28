@@ -21,7 +21,7 @@
 <div class="header">
     <h1 id="headertitle">
         <a id="logo" href="#">
-            <img src="${url.resourcesPath}/img/logo_javaland.gif" title="Javaland 2016"/>
+            <img src="${url.resourcesPath}/img/logo_doag.gif" title="Javaland 2017"/>
         </a>
         <span id="pagetitle">Keycloak</span>
         <div>Keycloak&nbsp;</div>
