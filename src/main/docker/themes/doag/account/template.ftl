@@ -21,7 +21,7 @@
 <div class="header">
     <h1 id="headertitle">
         <a id="logo" href="/doag/2017/">
-            <img src="${url.resourcesPath}/img/logo_doag.gif" title="DOAG 2017"/>
+            <img src="${url.resourcesPath}/img/logo_doag.gif" title="DOAG Konferenzen"/>
         </a>
         <span id="pagetitle">Keycloak</span>
         <div>Keycloak&nbsp;</div>

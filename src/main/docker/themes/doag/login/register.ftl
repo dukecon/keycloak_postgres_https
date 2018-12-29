@@ -10,23 +10,23 @@
             <#if !realm.registrationEmailAsUsername>
             <div class="pure-control-group">
                 <label for="username">${msg("username")}</label>
-                <input type="text" id="username" name="username" class="pure-input-2-3" value="${(register.formData.username!'')?html}" />
+                <input type="text" id="username" name="username" class="pure-input-2-3" value="${(register.formData.username!'')}" />
             </div>
             </#if>
             
             <div class="pure-control-group">
                 <label for="firstName">${msg("firstName")}</label>
-                <input type="text" id="firstName" name="firstName" class="pure-input-2-3" value="${(register.formData.firstName!'')?html}" />
+                <input type="text" id="firstName" name="firstName" class="pure-input-2-3" value="${(register.formData.firstName!'')}" />
             </div>
 
             <div class="pure-control-group">
                 <label for="lastName">${msg("lastName")}</label>
-                <input type="text" id="lastName" name="lastName" class="pure-input-2-3" value="${(register.formData.lastName!'')?html}" />
+                <input type="text" id="lastName" name="lastName" class="pure-input-2-3" value="${(register.formData.lastName!'')}" />
             </div>
 
             <div class="pure-control-group">
                 <label for="email">${msg("email")}</label>
-                <input type="text" id="email" name="email" class="pure-input-2-3" value="${(register.formData.email!'')?html}" />
+                <input type="text" id="email" name="email" class="pure-input-2-3" value="${(register.formData.email!'')}" />
             </div>
 
             <#if passwordRequired>

@@ -15,9 +15,9 @@
                 <div class="pure-control-group">
                     <label for="username">${msg("username")}</label>
                     <#if usernameEditDisabled??>
-                        <input id="username" name="username" class="pure-input-2-3" value="${(login.username!'')?html}" type="text" disabled />
+                        <input id="username" name="username" class="pure-input-2-3" value="${(login.username!'')}" type="text" disabled />
                     <#else>
-                        <input id="username" name="username" class="pure-input-2-3" value="${(login.username!'')?html}" type="text" autofocus />
+                        <input id="username" name="username" class="pure-input-2-3" value="${(login.username!'')}" type="text" autofocus />
                     </#if>
                 </div>
                 <div class="pure-control-group">
