@@ -27,7 +27,8 @@ docker run -ti --rm \
   --name keycloak-test \
   -e KEYCLOAK_USER=admin \
   -e KEYCLOAK_PASSWORD=admin123 \
-  -p 18080:8080 dukecon/dukecon-keycloak:1.1-SNAPSHOT
+  -e DB_VENDOR=H2 \
+  -p 18080:8080 dukecon/dukecon-keycloak:1.2-SNAPSHOT
 ```
 
 Wait a second for the Docker container to come up!
