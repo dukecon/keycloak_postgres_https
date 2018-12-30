@@ -107,3 +107,45 @@ Finally you could delete all of them in a loop
 for i in `cat /tmp/${REALM}-users-ids`; do ./kcadm.sh delete $i -r ${REALM}; echo $i; done
 ```
 
+
+## Test with productive data
+
+Execute Postgres
+
+```bash
+docker run -d \
+    -e POSTGRES_DATABASE=keycloak \
+    -e POSTGRES_USER=keycloak \
+    -e POSTGRES_PASSWORD=test1234 \
+    -e POSTGRES_ROOT_PASSWORD=test1234 \
+    -p 127.0.0.1:5432:5432 \
+    --name postgres-keycloak \
+    postgres:9.6
+```
+
+Copy Data dump from your productive (or testing) system:
+
+```bash
+scp -p root@dukecon...:/data/backup/keycloak.sql .
+```
+
+Load data into local DB:
+
+```bash
+PGPASSWORD=test1234 psql -h 127.0.0.1 -U keycloak  keycloak < keycloak.sql
+```
+
+Start KeyCloak (in foreground, remove after stop/abort):
+
+```bash
+# Override imported POSTGRES_PORT (which is like 'tcp://172...')
+docker run -ti --rm \
+  --name keycloak-test \
+  -e KEYCLOAK_USER=admin \
+  -e KEYCLOAK_PASSWORD=admin123 \
+  -e POSTGRES_PORT=5432 \
+  -e DB_USER=keycloak \
+  -e DB_PASSWORD=test1234 \
+  --link postgres-keycloak:postgres \
+  -p 18080:8080 dukecon/dukecon-keycloak:1.2-SNAPSHOT
+```
