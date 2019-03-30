@@ -31,9 +31,9 @@
         <docker.image.tgt.version>${project.version}</docker.image.tgt.version>
 
         <!-- Keep version properties in alphabetical order -->
-        <docker-maven-plugin.version>0.23.0</docker-maven-plugin.version>
-        <maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
-        <versions-maven-plugin.version>2.4</versions-maven-plugin.version>
+        <docker-maven-plugin.version>0.28.0</docker-maven-plugin.version>
+        <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
+        <versions-maven-plugin.version>2.7</versions-maven-plugin.version>
     </properties>
 
     <dependencies>
