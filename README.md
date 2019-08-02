@@ -28,7 +28,7 @@ docker run -ti --rm \
   -e KEYCLOAK_USER=admin \
   -e KEYCLOAK_PASSWORD=admin123 \
   -e DB_VENDOR=H2 \
-  -p 18080:8080 dukecon/dukecon-keycloak:1.2-SNAPSHOT
+  -p 18080:8080 dukecon/dukecon-keycloak:1.3-SNAPSHOT
 ```
 
 Wait a second for the Docker container to come up!
@@ -147,5 +147,5 @@ docker run -ti --rm \
   -e DB_USER=keycloak \
   -e DB_PASSWORD=test1234 \
   --link postgres-keycloak:postgres \
-  -p 18080:8080 dukecon/dukecon-keycloak:1.2-SNAPSHOT
+  -p 18080:8080 dukecon/dukecon-keycloak:1.3-SNAPSHOT
 ```
