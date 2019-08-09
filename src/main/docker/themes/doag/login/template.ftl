@@ -31,8 +31,8 @@
 <body>
 <div class="header">
     <h1 id="headertitle">
-        <a id="logo" href="/doag/2017/">
-            <img src="${url.resourcesPath}/img/logo_doag.gif" title="DOAG 2017"/>
+        <a id="logo" href="#">
+            <img src="${url.resourcesPath}/img/logo_doag.gif" title="DOAG 2019"/>
         </a>
         <span id="pagetitle"><#nested "header"></span>
         <div><#nested "header">&nbsp;</div>
