@@ -1,4 +1,4 @@
-<#macro registrationLayout bodyClass="" displayInfo=false displayMessage=true>
+i<#macro registrationLayout bodyClass="" displayInfo=false displayMessage=true>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +32,7 @@
 <div class="header">
     <h1 id="headertitle">
         <a id="logo" href="#">
-            <img src="${url.resourcesPath}/img/logo_javaland.gif" title="Javaland 2016"/>
+            <img src="${url.resourcesPath}/img/logo_javaland.gif" title="Javaland 2020"/>
         </a>
         <span id="pagetitle"><#nested "header"></span>
         <div><#nested "header">&nbsp;</div>
