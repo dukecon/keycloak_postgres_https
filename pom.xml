@@ -5,7 +5,7 @@
 
     <groupId>org.dukecon</groupId>
     <artifactId>dukecon-keycloak-postgres</artifactId>
-    <version>1.3-SNAPSHOT</version>
+    <version>1.4-SNAPSHOT</version>
     <name>DukeCon KeyCloak Postgres Docker</name>
     <packaging>pom</packaging>
 
@@ -24,14 +24,14 @@
 
         <docker.image.src.owner>jboss</docker.image.src.owner>
         <docker.image.src.name>keycloak</docker.image.src.name>
-        <docker.image.src.version>6.0.1</docker.image.src.version>
+        <docker.image.src.version>8.0.1</docker.image.src.version>
         <!-- For the owner either leave it empty or add the trailing slash! -->
         <docker.image.tgt.owner>dukecon/</docker.image.tgt.owner>
         <docker.image.tgt.name>dukecon-keycloak-postgres</docker.image.tgt.name>
         <docker.image.tgt.version>${project.version}</docker.image.tgt.version>
 
         <!-- Keep version properties in alphabetical order -->
-        <docker-maven-plugin.version>0.28.0</docker-maven-plugin.version>
+        <docker-maven-plugin.version>0.33.0</docker-maven-plugin.version>
         <maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
         <versions-maven-plugin.version>2.7</versions-maven-plugin.version>
     </properties>
@@ -40,7 +40,7 @@
         <dependency>
             <groupId>org.dukecon</groupId>
             <artifactId>keycloak-doag-user-spi</artifactId>
-            <version>1.1-SNAPSHOT</version>
+            <version>1.2-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
@@ -100,8 +100,8 @@
                             <build>
                                 <dockerFile>${docker.generated.targetPath}/Dockerfile</dockerFile>
                                 <assembly>
-                                    <inline xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2"
-                                            xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+                                    <inline xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/3.2.0"
+                                            xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/3.2.0 http://maven.apache.org/xsd/assembly-3.2.0.xsd">
                                         <id>mprm</id>
                                         <dependencySets>
                                             <dependencySet>
