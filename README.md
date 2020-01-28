@@ -28,7 +28,7 @@ docker run -ti --rm \
   -e KEYCLOAK_USER=admin \
   -e KEYCLOAK_PASSWORD=admin123 \
   -e DB_VENDOR=H2 \
-  -p 18080:8080 dukecon/dukecon-keycloak:1.3-SNAPSHOT
+  -p 18080:8080 dukecon/dukecon-keycloak:1.4-SNAPSHOT
 ```
 
 Wait a second for the Docker container to come up!
@@ -138,14 +138,17 @@ PGPASSWORD=test1234 psql -h 127.0.0.1 -U keycloak  keycloak < keycloak.sql
 Start KeyCloak (in foreground, remove after stop/abort):
 
 ```bash
-# Override imported POSTGRES_PORT (which is like 'tcp://172...')
+# Override imported DB_PORT (which is like 'tcp://172...')
 docker run -ti --rm \
   --name keycloak-test \
   -e KEYCLOAK_USER=admin \
   -e KEYCLOAK_PASSWORD=admin123 \
-  -e POSTGRES_PORT=5432 \
+  -e DB_VENDOR=postgres \
+  -e DB_SCHEMA=public \
+  -e DB_ADDR=db \
+  -e DB_PORT=5432 \
   -e DB_USER=keycloak \
   -e DB_PASSWORD=test1234 \
-  --link postgres-keycloak:postgres \
-  -p 18080:8080 dukecon/dukecon-keycloak:1.3-SNAPSHOT
+  --link postgres-keycloak:db \
+  -p 18080:8080 dukecon/dukecon-keycloak:1.4-SNAPSHOT
 ```
